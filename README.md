@@ -2,8 +2,6 @@
 
 This are the problems for the coding contest for my department's ITE Day hosted on May 5, 2024. You can solve this if you want to.
 
-<br/>
-
 ## Testing Solutions
 
 Use the command `./gradlew cleanTest test` in your IDE terminal to test your solution.
