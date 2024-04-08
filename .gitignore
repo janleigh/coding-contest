@@ -1,0 +1,6 @@
+Isograms/
+
+**/.gradle/
+**/app/build
+
+!.gitignore
