@@ -26,8 +26,8 @@ application {
 }
 
 jmh {
-    warmupIterations = 2
-    iterations = 4
+    warmupIterations = 1
+    iterations = 2
     fork = 1
 }
 
