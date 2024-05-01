@@ -4,7 +4,7 @@ This are the problems for the coding contest for my department's ITE Day hosted 
 
 ## Testing Solutions
 
-Use the command `./gradlew cleanTest test` in your IDE terminal to test your solution.
+Use the command `./gradlew cleanTest test` in your IDE terminal to test your solution. For TriangleStar, only use `./gradlew run` as it doesn't use test cases.
 
 ## Benchmarking Solutions
 

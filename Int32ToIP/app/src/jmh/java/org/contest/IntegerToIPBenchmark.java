@@ -41,8 +41,8 @@ public class IntegerToIPBenchmark {
 		int i = 0;
 		
 		while (i < 4) {
-			int byteValue = x & 0xFF;
-			b.insert(0, byteValue);
+			int c = (int) x & 0xFF;
+			b.insert(0, c);
 			if (i < 3) {
 				b.insert(0, ".");
 			}

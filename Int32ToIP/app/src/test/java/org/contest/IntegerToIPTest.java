@@ -45,7 +45,7 @@ class IntegerToIPTest {
 		int i = 0;
 		
 		while (i < 4) {
-			int c = x & 0xFF;
+			int c = (int) x & 0xFF;
 			b.insert(0, c);
 			if (i < 3) {
 				b.insert(0, ".");
