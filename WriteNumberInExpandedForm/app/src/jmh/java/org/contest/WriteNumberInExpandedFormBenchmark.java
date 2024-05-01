@@ -21,7 +21,7 @@ public class WriteNumberInExpandedFormBenchmark {
 	public void benchmarkFastest(Blackhole bh) {
 		for (int i = 0; i < 1000; i++) {
 			int uint32 = randInt32();
-			bh.consume(solution(uint32));
+			bh.consume(a(uint32));
 		}
 	}
 
@@ -36,15 +36,21 @@ public class WriteNumberInExpandedFormBenchmark {
         return Integer.parseUnsignedInt(bits.toString(), 2);
     }
 
-	private String solution(int n) {
-		String outs = "";
-        for (int i = 10; i < n; i *= 10) {
-            int rem = n % i;
-            outs = (rem > 0) ? " + " + rem + outs : outs;
-            n -= rem;
+	private String a(int n) {
+		String x = "";
+		int i = 10;
+		
+        while (i < n) {
+            int r = n % i;
+            x = (r > 0)
+				? " + " + r + x
+				: x;
+
+            n -= r;
+			i *= 10;
         }
-        outs = n + outs;
+        x = n + x;
         
-        return outs;
+        return x;
 	}
 }

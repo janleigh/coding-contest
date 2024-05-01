@@ -25,12 +25,12 @@ public class IsPrimeNumberBenchmark {
 		for (int i = 0; i < 1000; i++) {
 			long randomNumber = (long) random.nextInt(Integer.MAX_VALUE) + random.nextInt(Integer.MAX_VALUE) * (long) Integer.MAX_VALUE;
 			randomNumber = Math.abs(randomNumber % 2_000_000_000) + 2;
-			boolean isPrime = prime(randomNumber);
+			boolean isPrime = a(randomNumber);
 			bh.consume(isPrime);
 		}
 	}
 
-	private boolean prime(long x) {
+	private boolean a(long x) {
 		return x > 1 && java.math.BigInteger.valueOf(x).isProbablePrime(20);
 	}
 }

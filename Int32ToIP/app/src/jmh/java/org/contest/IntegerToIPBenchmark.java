@@ -21,7 +21,7 @@ public class IntegerToIPBenchmark {
 	public void benchmarkFastest(Blackhole bh) {
 		for (int i = 0; i < 500; i++) {
 			int uint32 = randInt32();
-			bh.consume(solution(uint32));
+			bh.consume(a(uint32));
 		}
 	}
 
@@ -36,18 +36,21 @@ public class IntegerToIPBenchmark {
 		return Integer.parseUnsignedInt(bits.toString(), 2);
 	}
 
-	private static String solution(int int32) {
-		StringBuilder result = new StringBuilder();
+	private static String a(int x) {
+		StringBuilder b = new StringBuilder();
+		int i = 0;
 		
-		for (int i = 0; i < 4; i++) {
-			int byteValue = int32 & 0xFF;
-			result.insert(0, byteValue);
+		while (i < 4) {
+			int byteValue = x & 0xFF;
+			b.insert(0, byteValue);
 			if (i < 3) {
-				result.insert(0, ".");
+				b.insert(0, ".");
 			}
-			int32 >>= 8;
+			x >>= 8;
+
+			i++;
 		}
 
-		return result.toString();
+		return b.toString();
 	}
 }

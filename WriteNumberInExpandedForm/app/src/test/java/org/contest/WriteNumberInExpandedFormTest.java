@@ -25,21 +25,21 @@ class WriteNumberInExpandedFormTest {
 	void testRandom() {
 		for (int i = 0; i < 1000; i++) {
 			int uint32 = new Random().nextInt(1000000);
-			assertEquals(solution(uint32), WriteNumberInExpandedForm.expandedForm(uint32));
+			assertEquals(a(uint32), WriteNumberInExpandedForm.expandedForm(uint32));
 		}
 	}
 
-	private static String solution(int n) {
+	private static String a(int n) {
 		String s = "";
-		int c = 0;
+		int i = 0;
 
 		while (n > 0){
 			s = n % 10 == 0 
 				? s
-				: n % 10 * (int) Math.pow(10, c) + " + " + s; 
+				: n % 10 * (int) Math.pow(10, i) + " + " + s; 
 			
 			n /= 10;
-			c++;
+			i++;
 		}
 
 		return s.substring(0, s.length() - 3);
