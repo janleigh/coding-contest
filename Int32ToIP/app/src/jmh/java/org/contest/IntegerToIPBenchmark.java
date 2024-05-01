@@ -36,7 +36,7 @@ public class IntegerToIPBenchmark {
 		return Integer.parseUnsignedInt(bits.toString(), 2);
 	}
 
-	private static String a(int x) {
+	private static String a(long x) {
 		StringBuilder b = new StringBuilder();
 		int i = 0;
 		
